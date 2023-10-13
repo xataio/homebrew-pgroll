@@ -11,7 +11,7 @@ class Pgroll < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/xataio/pgroll/releases/download/v0.3.0-rc.1/pgroll.macos.amd64"
-      sha256 "ca482aae68f120e4e36413f1d5d2182b2edc6a7afb082bdc57bfa72855cf70a9"
+      sha256 "247f26c0385fe2a372a0eb0e22f48056bae60d5d92379403cf30881df4be7e2e"
 
       def install
         bin.install "pgroll.macos.amd64" => "pgroll"
@@ -19,7 +19,7 @@ class Pgroll < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/xataio/pgroll/releases/download/v0.3.0-rc.1/pgroll.macos.arm64"
-      sha256 "041b78da39d5836a91e43620ecd13e8022dd8eb4701385ed0d2ea281cf9c23f5"
+      sha256 "e4625f493c8ef19480010eb513c35aa369867f68b32e2473f3dd52c81de48178"
 
       def install
         bin.install "pgroll.macos.arm64" => "pgroll"
@@ -28,20 +28,20 @@ class Pgroll < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xataio/pgroll/releases/download/v0.3.0-rc.1/pgroll.linux.arm64"
-      sha256 "d59ab7e20d6393a0729bf222848b6a0b7f6f9ed6d23955aef7687161c08ba558"
-
-      def install
-        bin.install "pgroll.linux.arm64" => "pgroll"
-      end
-    end
     if Hardware::CPU.intel?
       url "https://github.com/xataio/pgroll/releases/download/v0.3.0-rc.1/pgroll.linux.amd64"
-      sha256 "533546f11d3c52dd5f006ec5289af37529eec849ed1bc08c72296e7844cf05eb"
+      sha256 "cf6e618dda75a57bd3857e7244d3b961c7d059067c397b48ba93774d2cf630e4"
 
       def install
         bin.install "pgroll.linux.amd64" => "pgroll"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/xataio/pgroll/releases/download/v0.3.0-rc.1/pgroll.linux.arm64"
+      sha256 "e900657a76c2b5d1e6b0b5ea6388d8e8313afa35ff2c17ffde83114f8a93be48"
+
+      def install
+        bin.install "pgroll.linux.arm64" => "pgroll"
       end
     end
   end
